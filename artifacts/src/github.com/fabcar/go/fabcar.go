@@ -27,6 +27,9 @@ type Car struct {
 }
 
 type carPrivateDetails struct {
+	Make   string `json:"make"`
+	Model  string `json:"model"`
+	Colour string `json:"colour"`
 	Owner string `json:"owner"`
 	Price string `json:"price"`
 }
@@ -246,7 +249,8 @@ func (s *SmartContract) createPrivateCar(APIstub shim.ChaincodeStubInterface, ar
 
 	logger.Infof("55555")
 
-	var car = Car{Make: carInput.Make, Model: carInput.Model, Colour: carInput.Color, Owner: carInput.Owner}
+	//var car = Car{Make: carInput.Make, Model: carInput.Model, Colour: carInput.Color, Owner: carInput.Owner}
+	var car = Car{}
 
 	carAsBytes, err = json.Marshal(car)
 	if err != nil {
@@ -258,7 +262,7 @@ func (s *SmartContract) createPrivateCar(APIstub shim.ChaincodeStubInterface, ar
 		return shim.Error(err.Error())
 	}
 
-	carPrivateDetails := &carPrivateDetails{Owner: carInput.Owner, Price: carInput.Price}
+	carPrivateDetails := &carPrivateDetails{Make: carInput.Make, Model: carInput.Model, Colour: carInput.Color, Owner: carInput.Owner, Price: carInput.Price}
 
 	carPrivateDetailsAsBytes, err := json.Marshal(carPrivateDetails)
 	if err != nil {

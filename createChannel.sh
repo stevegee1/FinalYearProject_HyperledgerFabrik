@@ -86,8 +86,10 @@ updateAnchorPeers(){
     
 }
 
-removeOldCrypto
-
-createChannel
-joinChannel
+#removeOldCrypto
+#sleep 5
+#createChannel
+#sleep 5
+#joinChannel
+#sleep 5
 updateAnchorPeers

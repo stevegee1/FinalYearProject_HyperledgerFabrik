@@ -251,7 +251,7 @@ chaincodeInvoke() {
         -c '{"function": "initLedger","Args":[]}'
 
     ## Add private data
-    export CAR=$(echo -n "{\"key\":\"1111\", \"make\":\"Tesla\",\"model\":\"Tesla A1\",\"color\":\"White\",\"owner\":\"pavan\",\"price\":\"10000\"}" | base64 | tr -d \\n)
+    export CAR=$(echo  "{\"key\":\"1111\", \"make\":\"Tesla\",\"model\":\"Tesla A1\",\"color\":\"White\",\"owner\":\"pavan\",\"price\":\"10000\"}" | base64 | tr -d \\n)
     peer chaincode invoke -o localhost:7050 \
         --ordererTLSHostnameOverride orderer.example.com \
         --tls $CORE_PEER_TLS_ENABLED \
@@ -283,19 +283,21 @@ chaincodeQuery() {
 # chaincodeQuery
 
 # Run this function if you add any new dependency in chaincode
-# presetup
+ #presetup
 
-packageChaincode
-installChaincode
-queryInstalled
-approveForMyOrg1
-checkCommitReadyness
-approveForMyOrg2
-checkCommitReadyness
-commitChaincodeDefination
-queryCommitted
-chaincodeInvokeInit
-sleep 5
-chaincodeInvoke
-sleep 3
+ #packageChaincode
+
+  #installChaincode
+  #queryInstalled
+  #approveForMyOrg1
+ #checkCommitReadyness
+ #approveForMyOrg2
+  #checkCommitReadyness
+  #commitChaincodeDefination
+
+ #queryCommitted
+  #chaincodeInvokeInit
+# sleep 5
+  #chaincodeInvoke
+# sleep 3
 chaincodeQuery
