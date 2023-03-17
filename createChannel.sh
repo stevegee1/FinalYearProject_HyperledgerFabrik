@@ -90,6 +90,6 @@ updateAnchorPeers(){
 #sleep 5
 #createChannel
 #sleep 5
-#joinChannel
+ #joinChannel
 #sleep 5
-updateAnchorPeers
+#updateAnchorPeers
